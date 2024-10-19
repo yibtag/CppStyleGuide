@@ -275,6 +275,9 @@ public:
 };
 ```
 
+> [!CAUTION]
+> Never call a virtual function from a constructor.
+
 ## Comments
 
 Comments should not be used unless necessary basic usage casses and examples belong in documentation files. You should only comment things that are generaly hard to understant(example: randome bitshifts or functions being called for seamingly no reason).
