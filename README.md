@@ -247,7 +247,7 @@ private:
 
 ## Inharitance
 
-Instead of inharitance we use interfaces (wich can only implement methods) and dependency injection.
+Instead of inharitance we use interfaces (wich can only implement methods) and dependency injection. Interfaces should be prefix with a capital I.
 
 Example of dependency injection:
 ```cpp
@@ -264,12 +264,12 @@ private:
 
 Example of using interfaces:
 ```cpp
-class UIComponent {
+class IUIComponent {
 public:
     virtual void Draw() = 0;
 };
 
-class UIButton : public UIComponent {
+class UIButton : public IUIComponent {
 public:
     void Draw() override {};
 };
