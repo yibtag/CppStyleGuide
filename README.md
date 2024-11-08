@@ -213,38 +213,6 @@ struct _Data {
 } Data, *PData;
 ```
 
-## Errors
-
-You should treat errors as values. Simple as that. This depends on the project but every project should have an error class or struct.
-
-Example of a error type:
-```cpp
-typedef std::optional<std::string> Result;
-```
-
-When dealing with constructors that error, they should have a private member variable that acts as a return value.
-
-Example of constructor errors:
-```cpp
-class Example {
-public:
-    Example() {
-        if (!failed_function()) {
-            this->result = "Failed to init ...!";
-            return;
-        }
-
-        this->result = std::nullopt;
-    }
-
-    Result GetResult() const {
-        return this->result;
-    }
-private:
-    Result result;
-};
-```
-
 ## Inharitance
 
 Instead of inharitance we use interfaces (wich can only implement methods) and dependency injection. Interfaces should be prefix with a capital I.
@@ -277,7 +245,3 @@ public:
 
 > [!CAUTION]
 > Never call a virtual function from a constructor.
-
-## Comments
-
-Comments should not be used unless necessary basic usage casses and examples belong in documentation files. You should only comment things that are generaly hard to understant(example: randome bitshifts or functions being called for seamingly no reason).
